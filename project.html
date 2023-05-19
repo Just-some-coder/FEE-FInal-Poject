@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./project.js"></script>
+    <link rel="stylesheet" href="./project.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exit the plugin</title>
+</head>
+<body>
+    <div id="exit-popup">
+        <div class="exit-button">
+            <button id="exit-btn" onclick="closePopup()">&#215;</button>
+        </div>
+        <div class="timer">
+            <div class="minutes">
+                <p>1</p>
+            </div>
+            <div class="time-colon">
+                <p>:</p>
+            </div>
+            <div class="seconds">
+                <p>59</p>
+            </div>
+        </div>
+        <div class="popup-text">
+            <h1>WAIT! GET 10% OFF</h1>
+            <p>Enter your email to get a free coupon.
+            </p>
+        </div>
+        <div class="email-box">
+            <input type="text" placeholder="Email" id="email-box">
+            <button type="submit" id="submit-btn">Send Me The Coupon</button>
+        </div>
+        <div class="conditions">
+            <input type="checkbox" required>I Agree to terms and conditions<br>
+            <input type="checkbox">Allow to send Promotional Emails
+        </div>
+        <div class="note">
+            <p>(minimun order must be &#8377;500)</p>
+        </div>
+    </div>
+</body>
+</html>

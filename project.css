@@ -1,0 +1,159 @@
+body{
+    background-color: rgb(28,68,176);
+    background-image: url("./papers.co-vr02-abstract-blue-yellow-art-pattern-3840x2400.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+::placeholder{
+    color: rgb(255,235,60);
+    opacity: 0.8;
+}
+
+#exit-popup{
+    border-radius: 4.5%;
+    width: 450px;
+    height: 320px;
+    background-color: rgb(255,235,60);
+    position: relative;
+    top:100px;
+    left:400px;
+    box-shadow: 0 10px 30px #1a1a1a;
+}
+
+#exit-btn{
+    position: relative;
+    top:-3px;
+    left:425px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    color:rgb(28,68,176);
+}
+
+.timer{
+    position: relative;
+    left:120px;
+    width:210px;
+    height: 80px;
+    float: left;
+}
+
+.minutes{
+    position: relative;
+    top:-26.5px;
+    width: 100px ;
+    height:80px ;
+    background-color:rgb(28,68,176);
+    color:rgb(255,235,60);
+    text-align: center;
+}
+
+.minutes p{
+    font-size:2rem;
+    line-height: 75px;
+}
+
+.seconds p{
+    font-size: 2rem;
+    line-height: 75px;
+}
+
+.time-colon{
+    font-size: 3rem;
+    text-align: center;
+    line-height: 80px;
+    color: rgb(28,68,176);
+    position: relative;
+    top:-160px;
+    left:100px;
+    width:10px;
+    height: 80px;
+}
+
+.seconds{
+    position: relative;
+    top:-267px;
+    left:115px;
+    width: 100px;
+    height: 80px;
+    background-color: rgb(28,68,176);
+    color: rgb(255,235,60);
+    text-align: center;
+}
+
+.popup-text{
+    position: relative;
+    color:rgb(28,68,176);
+    font-family: tahoma;
+    top:90px;
+    left:-220px;
+    width: 700px;
+    height: 90px;
+    text-align:center ;
+}
+
+.popup-text p{
+    margin-top: -10px;
+}
+
+.email-box{
+    position: relative;
+    top:90px;
+    left:20px;
+}
+
+.email-box input{
+    width: 200px;
+    background-color: rgb(28,68,176);
+    color: rgb(255,235,60);
+    border: none;
+}
+
+.email-box button{
+    width: 200px;
+    margin-left: 10px;
+    background-color: rgb(28,68,176);
+    color: rgb(255,235,60);
+    border:none;
+}
+
+.email-box button:hover{
+    color:rgb(28,68,176);
+    background-color: rgb(255,235,60);
+    border: rgb(28,68,176) solid 0.1px;
+}
+
+.conditions{
+    width: 400px;
+    position: relative;
+    top:100px;
+    left:100px;
+    color: rgb(28,68,176);
+}
+.note{
+    width: 400px;
+    height: 30px;
+    position: relative;
+    opacity: 0.5;
+    font-size: 15px;
+    top:85px;
+    left: 130px;
+    color:rgb(28,68,176);
+
+}
+
+#submit-btn{
+    padding:10px auto;
+}
+
+@media screen and (max-width:768px){
+    body{
+        background-color: rgb(28,68,176);
+        background-image: url("./papers.co-vr02-abstract-blue-yellow-art-pattern-ipad.jpg");
+    }
+    #exit-popup{
+        left:100px;
+    }
+}
