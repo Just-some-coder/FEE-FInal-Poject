@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazon Order Confirmation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .order-summary {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .order-summary h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .order-summary table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    .order-summary table th,
+    .order-summary table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .order-summary table th {
+      font-weight: bold;
+      background-color: #f5f5f5;
+    }
+    .order-summary .total {
+      font-weight: bold;
+    }
+    .order-confirmation {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .order-confirmation .content {
+      display: inline-block;
+      max-width: 500px;
+      text-align: left;
+    }
+    .order-confirmation h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .order-confirmation p {
+      margin-bottom: 10px;
+    }
+    .order-confirmation button {
+      border-radius: 50%;
+      background-color: #ff9900;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .order-confirmation button:hover {
+      background-color: #e69100;
+    }
+
+    #cancel-order{
+      border: none;
+    }
+
+    #cancel-order:hover{
+      text-decoration: underline;
+    }
+
+    body {
+    margin: 0;
+    padding: 0;
+  }
+
+#offerAccepted{
+  margin-top: 20px;
+}
+#total{
+  font-weight: 700;
+}
+#appliedDiscount{
+  display: none;
+  font-weight: 700;
+}
+#confirm-order-btn{
+  position: fixed;
+  border-radius: 10%;
+  left:570px;  
+}
+
+#discount-popup  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popupContent {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+  </style>
+</head>
+<body>
+  <button id = "cancel-order" onclick="cancel()">Cancel Order</button><br><br>
+  <h1>Order Confirmation</h1>
+
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Men's T-shirt</td>
+          <td>2</td>
+          <td>$20.00</td>
+        </tr>
+        <tr>
+          <td>Women's Jeans</td>
+          <td>1</td>
+          <td>$40.00</td>
+        </tr>
+        <tr>
+          <td>Running Shoes</td>
+          <td>1</td>
+          <td>$50.00</td>
+      </tbody>
+    </table>
+    <div id="appliedDiscount">Discount: $13.00</div>
+    <div id="total">Total: $130.00</div>
+  </div>
+
+  <button id="confirm-order-btn">Confirm Order</button>
+
+  <div class="order-confirmation">
+    <div class="content">
+      <h2>Order Confirmed</h2>
+      <p>Thank you for your order. Your order number is #123456.</p>
+      <p>An email confirmation has been sent to your email address.</p>
+      <button id="close-confirmation-btn">Close</button>
+    </div>
+  </div>
+
+  <div id = "discount-popup">
+      <div class="popupContent">
+          <p id="timer"></p>
+          <p>Wait! Don't leave just yet. Proceed with the order and avail a one-time offer of a 10% discount.</p>
+          <button id="offerAccepted" onclick="discountApply()">Apply Offer</button>
+          <button id="offerRejected" onclick="discountApply()">Leave Anyway</button>
+      </div>
+  </div>
+
+  <script>
+    const confirmOrderBtn = document.getElementById('confirm-order-btn');
+    const orderConfirmation = document.querySelector('.order-confirmation');
+    const closeConfirmationBtn = document.getElementById('close-confirmation-btn');
+
+    confirmOrderBtn.addEventListener('click', () => {
+      orderConfirmation.style.display = 'block';
+    });
+
+    closeConfirmationBtn.addEventListener('click', () => {
+      orderConfirmation.style.display = 'none';
+      document.getElementById("cancel-order").disabled = "true";
+      document.getElementById("confirm-order-btn").disabled = "true";
+    });
+
+  
+    function startTimer(duration, display) {
+        var timer = duration;
+        var minutes, seconds;
+
+        setInterval(function () {
+          minutes = parseInt(timer / 60);
+        seconds = parseInt(timer % 60);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                document.getElementById("discount-popup").style.display = "none";
+            }
+        }, 1000);
+    }
+
+    function cancel(leavePage) {
+      document.getElementById("discount-popup").style.display = "flex";
+      var oneMinute = 60;
+      var display = document.getElementById("timer");
+      startTimer(oneMinute, display);
+    };
+
+    function discountApply(){
+      document.getElementById("appliedDiscount").style.display = "block";
+      document.getElementById("total").innerHTML = "Total: $117.00";
+      document.getElementById("discount-popup").style.display = "none";
+      document.getElementById("cancel-order").disabled = "true";
+    }
+  </script>
+</body>
+</html>

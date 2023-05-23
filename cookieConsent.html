@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News Website</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+p {
+  margin: 0;
+}
+
+nav {
+  background-color: #555;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #999;
+}
+
+main {
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+article {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+}
+/* Popup css */
+#cookieConsentPopup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 350px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 9999;
+}
+
+.options {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button#acceptBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button#rejectBtn {
+  background-color: #f44336;
+  color: white;
+}
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const cookiePopup = document.getElementById('cookieConsentPopup');
+    const acceptBtn = document.getElementById('acceptBtn');
+    const rejectBtn = document.getElementById('rejectBtn');
+
+  acceptBtn.addEventListener('click', function() {
+    const preferences = document.querySelector('input[name="preferences"]').checked;
+    const statistics = document.querySelector('input[name="statistics"]').checked;
+    const marketing = document.querySelector('input[name="marketing"]').checked;
+    
+    cookiePopup.style.display = 'none';
+  });
+
+  setTimeout(function(){
+    document.getElementById("cookieConsentPopup").style.display = "block"
+  },3000);
+
+});
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>News Website</h1>
+      <p>Your Source for the Latest News</p>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">World</a></li>
+        <li><a href="#">Politics</a></li>
+        <li><a href="#">Entertainment</a></li>
+        <li><a href="#">Sports</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <div class="container">
+      <section class="article">
+        <h2>A Cosmic Adventure that Fans Can't Wait to Experience</h2>
+        <article>
+        The Hype Builds for "Guardians of the Galaxy 3"<br><br>
+
+        Introduction:<br>
+        <img src="./Marvel_Studios_2016_logo.svg.png"><br>
+        As Marvel fans eagerly await the release of "Guardians of the Galaxy 3," the anticipation and excitement continue to build. The third installment of the beloved superhero franchise promises to deliver an epic adventure that will captivate audiences worldwide. With the success of the previous movies, the expectations for "Guardians of the Galaxy 3" are sky-high. Fans eagerly await the return of the witty banter, thrilling action sequences, and emotional character moments that have defined the franchise.<br><br>
+
+        A Visionary Director:<br>
+        <img src="./440px-James_Gunn_(28557194032)_(cropped).jpg"><br>
+        Director James Gunn, known for his unique vision and storytelling, is back at the helm for "Guardians of the Galaxy 3." Gunn's previous work on the franchise has garnered critical acclaim and a loyal fan base. His ability to blend humor, heart, and action has made the Guardians movies stand out among the vast Marvel Cinematic Universe. Fans can expect Gunn's distinct style to once again bring these beloved characters to life.<br><br>
+
+        The Return of the Star-Studded Cast:<br>
+        <img src="./Guardians_of_the_Galaxy_(film)_poster.jpg"><br>
+        One of the key factors that has contributed to the success of the Guardians franchise is its exceptional ensemble cast. Chris Pratt's charismatic portrayal of Peter Quill (Star-Lord), Zoe Saldana's fierce and enigmatic Gamora, and Dave Bautista's hilarious yet heartfelt Drax the Destroyer have endeared these characters to fans worldwide. Additionally, the vocal talents of Bradley Cooper as Rocket and Vin Diesel as Groot have brought these CGI characters to life in an unforgettable way. The reunion of this talented cast ensures that the chemistry and dynamics that made the previous movies so enjoyable will be present in "Guardians of the Galaxy 3."<br><br>
+
+        Mysterious Plot Details:<br>
+        Marvel Studios has been tight-lipped about the plot details of "Guardians of the Galaxy 3." The secrecy surrounding the movie has only fueled the anticipation and speculation among fans. What new adventures await the Guardians team? Will they face new cosmic threats? How will the events of previous films tie into the narrative? These questions have sparked numerous fan theories and discussions, creating a sense of excitement and intrigue.<br><br>
+
+        Expanding the Marvel Cinematic Universe:<br>
+        <img src="./Marvel_Cinematic_Universe_logo.png"><br>
+        "Guardians of the Galaxy 3" is not just a standalone film; it will also play a significant role in the larger Marvel Cinematic Universe. As the franchise has demonstrated in the past, the Guardians team has connections and interactions with other Marvel characters. The movie is expected to tie into the ongoing storylines and events established in previous films, setting the stage for future Marvel movies and expanding the cosmic side of the MCU.<br><br>
+<br>
+        Trailers and Teasers:<br>
+        <img src="./Guardians_of_the_Galaxy_Vol._3_poster.jpg"><br>
+        Marvel Studios has released teasers and trailers for "Guardians of the Galaxy 3" to further fuel the hype and engage fans. These sneak peeks have provided glimpses of the stunning visuals, dynamic action sequences, and the unique blend of humor and heart that fans have come to love. Each new trailer release generates a surge of excitement as fans dissect every frame, searching for clues and hints about the story and potential surprises.<br><br>
+
+        Impact on Pop Culture:<br>
+        The Guardians of the Galaxy franchise has had a significant impact on pop culture since its debut. The first movie's memorable soundtrack, featuring classic hits from the '70s and '80s, became a cultural phenomenon, introducing a new generation to timeless music. The quirky and lovable characters of the Guardians have become fan favorites, inspiring cosplays, fan art, and a strong presence in pop culture conventions and events. "Guardians of the Galaxy 3" is expected to further solidify the franchise's place in pop culture history.<br><br>
+
+        Conclusion:<br>
+        As the release date for "Guardians of the Galaxy 3" approaches, fans can't help but feel the excitement and anticipation for what promises to be another epic and unforgettable adventure with the Guardians of the Galaxy. Director James Gunn's return, the talented ensemble cast, and the promise of a thrilling and emotional storyline have fans eagerly counting down the days until they can join Star-Lord, Gamora, Drax, Rocket, and Groot on their next cosmic journey. The hype for "Guardians of the Galaxy 3" continues to build, setting the stage for another blockbuster success in the Marvel Cinematic Universe.<br><br>
+        </article>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>© 2023 News Website. All rights reserved.</p>
+    </div>
+  </footer>
+  <div id="cookieConsentPopup">
+    <p>This website uses cookies to ensure you get the best experience. Please select your cookie preferences:</p>
+    <div class="options">
+      <label><input type="checkbox" name="preferences"> Preferences</label>
+      <label><input type="checkbox" name="statistics"> Statistics</label>
+      <label><input type="checkbox" name="marketing"> Marketing</label>
+    </div>
+    <div class="buttons">
+      <button id="acceptBtn">Accept</button>
+      <button id="rejectBtn">Reject</button>
+    </div>
+  </div>
+</body>
+</html>
